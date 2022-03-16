@@ -1,0 +1,21 @@
+
+    .wrapper{
+        position: relative;
+        }
+        .wrapper span{
+        position: absolute;
+        top: -25px;
+        right: -10px; 
+        }
+
+.cart-no{
+    min-width: 25px;
+    min-height: 25px;
+    border-radius: 50%;
+    background-color: blue;
+    color: white;
+    text-align: center;
+
+  
+}
+

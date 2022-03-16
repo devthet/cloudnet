@@ -1,0 +1,14 @@
+<div class="container py-3">
+    <app-nav-bar></app-nav-bar>
+    <div class="container">
+        <h1>Welcome to {{title}}</h1>
+        <ul>
+            <li *ngFor="let product of products">
+                {{product.name}}
+            </li>
+        </ul>
+    </div>
+    
+</div>
+
+
