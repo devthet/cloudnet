@@ -1,12 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
 using Infrastructure.Data;
-using Core.Interfaces;
 using API.Helpers;
 using API.Middleware;
-using Microsoft.AspNetCore.Mvc;
-using API.Errors;
 using API.Extensions;
+using StackExchange.Redis;
 
 namespace API
 {
@@ -30,6 +27,14 @@ namespace API
             
             services.AddDbContext<StoreContext>(options => options.UseSqlite(_config.GetConnectionString("DefaultConnection")));
 
+            services.AddSingleton<IConnectionMultiplexer>(
+                c=>{
+                    var configuration = ConfigurationOptions.Parse(_config.GetConnectionString("Redis"), true);
+                    return ConnectionMultiplexer.Connect(configuration);
+
+                }
+                
+            );
             services.AddControllers();
 
             services.AddApplicationServices();

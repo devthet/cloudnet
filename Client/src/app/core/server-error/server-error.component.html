@@ -1,0 +1,17 @@
+<div class="container mt-5">
+    <h4>Server Internal Error - refreshing the page will make the exceptio disappear</h4>
+    <h5 class="text-danger">Error:{{error.message}}</h5>
+    <p class="font-weight-bold">
+        Note: If you are seeing this then Angular is probably not responsible
+    </p>
+    <p>What to do next?</p>
+    <ol>
+        <li>Open chrome dev tools</li>
+        <li>Inspect the network tab</li>
+        <li>Check the failing request</li>
+        <li>Examine this request Url - make sure this is correct</li>
+        <li>Reproduce the error in post man</li>
+    </ol>
+    <p>Followint the stack trace</p>
+    <code class="mt-5" style="background-color: whitesmoke;">{{error.details}}</code>
+</div>
