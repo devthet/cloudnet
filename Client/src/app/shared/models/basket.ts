@@ -1,9 +1,14 @@
 //import uuid from 'uuid'
- import {v4 as uuidv4} from 'uuid'
+
+import {v4 as uuidv4} from 'uuid'
 // import * as uuid from 'uuid';
 export interface IBasket{
     id:string
     items:IBasketItem[]
+    clientSecret?:string
+    deliveryMethodId?:number
+    paymentIntentId?:string
+    shippingPrice?:number
 }
 
 export interface IBasketItem{
